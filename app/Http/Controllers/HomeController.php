@@ -8,6 +8,11 @@ use App\Models\Train;
 class HomeController extends Controller
 {
     public function index() {
-		return view("home");
+
+		$trains = Train::where('orario_di_partenza', '>', '12:00:00')->get();
+
+		return view("home", [
+			'trains'=>$trains
+		]);
 	}
 }

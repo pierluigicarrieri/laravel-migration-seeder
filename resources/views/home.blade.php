@@ -6,12 +6,14 @@
 
     <div class="container">
 
-        <h1>ciaoooooo</h1>
+        <h1 class="py-5 text-center text-primary">Treni che partono oggi dopo le ore 12:00:00</h1>
 
-            <ul>
+            <ul class="text-center">
+                @foreach($trains as $train)
 
-                <li></li>
+                <li>{{$train->azienda}} - {{$train->stazione_di_partenza}} - {{$train->orario_di_partenza}}</li>
 
+                @endforeach
             </ul>
 
     </div>
